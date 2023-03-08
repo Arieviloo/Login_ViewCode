@@ -7,7 +7,18 @@
 
 import UIKit
 
+protocol LoginScreenProtocol:class {
+    func actionLoginButton()
+    func actionRegisterButton()
+}
+
 class LoginScreen: UIView {
+    
+    private weak var delegate:LoginScreenProtocol?
+    
+    func delegate(delegate:LoginScreenProtocol?){
+        self.delegate = delegate
+    }
     
     lazy var loginLabel:UILabel = {
         let label = UILabel()
@@ -97,11 +108,11 @@ class LoginScreen: UIView {
     }
     
     @objc private func tappedLoginButton() {
-        print("aqui é noizes")
+        self.delegate?.actionLoginButton()
     }
     
     @objc private func tappedRegisterButton() {
-        print("registrado com sucesso!!!")
+        self.delegate?.actionRegisterButton()
     }
     
     required init?(coder: NSCoder) {
