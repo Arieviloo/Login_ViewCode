@@ -18,9 +18,10 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.loginScreen?.configTextFIeldDelegate(delegate: self)
+        self.loginScreen?.configTextFieldDelegate(delegate: self)
     }
 }
+
 
 extension ViewController:UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

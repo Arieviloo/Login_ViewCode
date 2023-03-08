@@ -61,6 +61,7 @@ class LoginScreen: UIView {
         btn.clipsToBounds = true
         btn.layer.cornerRadius = 7.5
         btn.backgroundColor = UIColor(red: 3/255, green: 58/255, blue: 51/255, alpha: 1.0)
+        btn.addTarget(self, action: #selector(self.tappedLoginButton), for: .touchUpInside)
         return btn
     }()
     
@@ -70,6 +71,7 @@ class LoginScreen: UIView {
         btn.setTitle("Não tem conta? Cadastra-se", for: .normal)
         btn.titleLabel?.font = UIFont.systemFont(ofSize: 18)
         btn.setTitleColor(.white, for: .normal)
+        btn.addTarget(self, action: #selector(self.tappedRegisterButton), for: .touchUpInside)
         return btn
     }()
     
@@ -89,9 +91,17 @@ class LoginScreen: UIView {
         self.backgroundColor = UIColor(red: 24/255, green: 117/255, blue: 104/255, alpha: 1.0)
     }
     
-    public func configTextFIeldDelegate(delegate:UITextFieldDelegate) {
+    public func configTextFieldDelegate(delegate:UITextFieldDelegate) {
         self.emailTextField.delegate = delegate
         self.passwordTextField.delegate = delegate
+    }
+    
+    @objc private func tappedLoginButton() {
+        print("aqui é noizes")
+    }
+    
+    @objc private func tappedRegisterButton() {
+        print("registrado com sucesso!!!")
     }
     
     required init?(coder: NSCoder) {
