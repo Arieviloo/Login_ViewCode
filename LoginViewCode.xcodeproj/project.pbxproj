@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		417370A729B904B40089E20D /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417370A629B904B40089E20D /* RegisterViewController.swift */; };
 		41D78D4029B649F100FFB7A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D78D3F29B649F100FFB7A9 /* AppDelegate.swift */; };
 		41D78D4229B649F100FFB7A9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D78D4129B649F100FFB7A9 /* SceneDelegate.swift */; };
 		41D78D4429B649F100FFB7A9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D78D4329B649F100FFB7A9 /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		417370A629B904B40089E20D /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		41D78D3C29B649F100FFB7A9 /* LoginViewCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoginViewCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41D78D3F29B649F100FFB7A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		41D78D4129B649F100FFB7A9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +39,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		417370A129B9014F0089E20D /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				417370A229B901570089E20D /* VC */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		417370A229B901570089E20D /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				417370A629B904B40089E20D /* RegisterViewController.swift */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
 		41D78D3329B649F100FFB7A9 = {
 			isa = PBXGroup;
 			children = (
@@ -56,6 +74,7 @@
 		41D78D3E29B649F100FFB7A9 /* LoginViewCode */ = {
 			isa = PBXGroup;
 			children = (
+				417370A129B9014F0089E20D /* Register */,
 				41D78D5329B64B2800FFB7A9 /* Login */,
 				41D78D3F29B649F100FFB7A9 /* AppDelegate.swift */,
 				41D78D4129B649F100FFB7A9 /* SceneDelegate.swift */,
@@ -162,6 +181,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				41D78D4429B649F100FFB7A9 /* ViewController.swift in Sources */,
+				417370A729B904B40089E20D /* RegisterViewController.swift in Sources */,
 				41D78D5729B64B5800FFB7A9 /* LoginScreen.swift in Sources */,
 				41D78D4029B649F100FFB7A9 /* AppDelegate.swift in Sources */,
 				41D78D4229B649F100FFB7A9 /* SceneDelegate.swift in Sources */,
