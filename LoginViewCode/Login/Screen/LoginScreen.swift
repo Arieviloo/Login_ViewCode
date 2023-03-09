@@ -150,8 +150,8 @@ class LoginScreen: UIView {
             self.registerButton.heightAnchor.constraint(equalTo: self.emailTextField.heightAnchor)
             
             
-                        
+            
         ])
     }
-
+    
 }
