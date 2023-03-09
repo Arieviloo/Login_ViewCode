@@ -7,7 +7,17 @@
 
 import UIKit
 
+protocol RegisterScreenProtocol:class {
+    func actionRegisterButton()
+}
+
 class RegisterScreen: UIView {
+    
+    private weak var delegate:RegisterScreenProtocol?
+    
+    func delegate(delegate:RegisterScreenProtocol) {
+        self.delegate = delegate
+    }
     
     lazy var userImageView:UIImageView = {
         let img = UIImageView()
@@ -52,6 +62,7 @@ class RegisterScreen: UIView {
         btn.clipsToBounds = true
         btn.layer.cornerRadius = 7.5
         btn.backgroundColor = UIColor(red: 3/255, green: 58/255, blue: 51/255, alpha: 1.0)
+        btn.addTarget(self, action: #selector(self.tappedRegisterButton), for: .touchUpInside)
         return btn
     }()
 
@@ -76,6 +87,15 @@ class RegisterScreen: UIView {
         self.addSubview(self.emailTextField)
         self.addSubview(self.passwordTextField)
         self.addSubview(self.registerButton)
+    }
+    
+    public func configTextFieldDelegate(delegate:UITextFieldDelegate){
+        self.emailTextField.delegate = delegate
+        self.passwordTextField.delegate = delegate
+    }
+    
+    @objc private func tappedRegisterButton() {
+        self.delegate?.actionRegisterButton()
     }
     
     private func setUpConstraints() {

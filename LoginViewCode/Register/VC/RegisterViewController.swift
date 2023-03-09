@@ -9,7 +9,7 @@ import UIKit
 
 class RegisterViewController: UIViewController {
     
-    var registerScreen: RegisterScreen?
+    var registerScreen:RegisterScreen?
     
     override func loadView() {
         self.registerScreen = RegisterScreen()
@@ -18,6 +18,21 @@ class RegisterViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.registerScreen?.configTextFieldDelegate(delegate: self)
+        self.registerScreen?.delegate(delegate: self)
     }
+}
 
+extension RegisterViewController:RegisterScreenProtocol {
+    func actionRegisterButton() {
+        print("cadastrado")
+    }
+    
+    
+}
+
+extension RegisterViewController:UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+    }
 }
