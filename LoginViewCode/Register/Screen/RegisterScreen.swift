@@ -47,10 +47,10 @@ class RegisterScreen: UIView {
         tf.backgroundColor = .white
         tf.borderStyle = .roundedRect
         tf.keyboardType = .default
-        tf.placeholder = "Digite sua senha:"
         tf.isSecureTextEntry = true
-        tf.font = UIFont.systemFont(ofSize: 14)
-        tf.textColor = .darkGray
+        tf.placeholder = "Digite sua Senha:"
+        tf.textColor = .gray
+        tf.textContentType = .oneTimeCode //Adicionei para retirar o "strong password"
         return tf
     }()
     
@@ -70,6 +70,7 @@ class RegisterScreen: UIView {
         super.init(frame: frame)
         self.configScreenBackground()
         self.configSuperView()
+        self.configButtonEnable(false)
         self.setUpConstraints()
     }
     
@@ -96,6 +97,22 @@ class RegisterScreen: UIView {
     
     @objc private func tappedRegisterButton() {
         self.delegate?.actionRegisterButton()
+    }
+    
+    public func validateTextField() {
+        let email:String = self.emailTextField.text ?? ""
+        let password:String = self.passwordTextField.text ?? ""
+        
+        if !email.isEmpty && !password.isEmpty {
+            self.configButtonEnable(true)
+        }else {
+            self.configButtonEnable(false)
+        }
+    }
+    
+    private func configButtonEnable(_ enable:Bool) {
+        self.registerButton.setTitleColor(enable ? .white : .lightGray, for: .normal)
+        self.registerButton.isEnabled = enable
     }
     
     private func setUpConstraints() {

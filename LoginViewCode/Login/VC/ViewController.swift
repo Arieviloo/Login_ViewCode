@@ -33,12 +33,15 @@ extension ViewController:LoginScreenProtocol {
         print("register button")
         let registerVC = RegisterViewController()
         self.navigationController?.pushViewController(registerVC, animated: true)
-        
     }
     
 }
 
 extension ViewController:UITextFieldDelegate {
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        self.loginScreen?.validateTextField()
+    }
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
     }
