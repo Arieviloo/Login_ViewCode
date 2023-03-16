@@ -6,10 +6,12 @@
 //
 
 import UIKit
+import Firebase
 
 class ViewController: UIViewController {
     
     var loginScreen:LoginScreen?
+    var auth:Auth?
     
     override func loadView() {
         self.loginScreen = LoginScreen()
@@ -20,13 +22,30 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         self.loginScreen?.delegate(delegate: self)
         self.loginScreen?.configTextFieldDelegate(delegate: self)
+        self.auth = Auth.auth()
     }
 }
 
 
 extension ViewController:LoginScreenProtocol {
     func actionLoginButton() {
-        print("login button")
+        print("login")
+        let email:String = self.loginScreen?.emailTextField.text ?? ""
+        let password:String = self.loginScreen?.passwordTextField.text ?? ""
+        
+        self.auth?.signIn(withEmail: email, password: password, completion: {(user, error) in
+            
+            if error != nil {
+                print("Dados incorretos")
+            }else {
+                if user == nil {
+                    print("Erro inesperado ")
+                }else {
+                    print("Logado com sucesso!!!")
+                }
+            }
+        } )
+        
     }
     
     func actionRegisterButton() {
