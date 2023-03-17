@@ -8,10 +8,10 @@
 import UIKit
 import Firebase
 
-
 class RegisterViewController: UIViewController {
     
     var registerScreen:RegisterScreen?
+    var alert: Alert?
     
     var auth:Auth?
     
@@ -25,6 +25,7 @@ class RegisterViewController: UIViewController {
         self.registerScreen?.configTextFieldDelegate(delegate: self)
         self.registerScreen?.delegate(delegate: self)
         self.auth = Auth.auth()
+        self.alert = Alert(controller: self)
     }
 }
 
@@ -36,9 +37,11 @@ extension RegisterViewController:RegisterScreenProtocol {
 
         self.auth?.createUser(withEmail: email, password: password, completion: { (result, error) in
             if error != nil {
-                print("error ao cadastrar")
+                self.alert?.getAlert(title: "Error", msg: "Erro ao cadastrar")
             } else {
-                print("Sucesso ao cadastrar")
+                self.alert?.getAlert(title: "Parabéns", msg: "Usuário cadastrado com sucesso!!!", completion: {
+                    self.navigationController?.popViewController(animated: true)
+                })
             }
         })
     }

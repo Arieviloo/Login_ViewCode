@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4155571129C4A23E00D927C2 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4155571029C4A23E00D927C2 /* Alert.swift */; };
 		417370A729B904B40089E20D /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417370A629B904B40089E20D /* RegisterViewController.swift */; };
 		417370AE29BA17B60089E20D /* RegisterScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417370AD29BA17B60089E20D /* RegisterScreen.swift */; };
 		41D78D4029B649F100FFB7A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D78D3F29B649F100FFB7A9 /* AppDelegate.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4155571029C4A23E00D927C2 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		417370A629B904B40089E20D /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		417370AD29BA17B60089E20D /* RegisterScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterScreen.swift; sourceTree = "<group>"; };
 		41D78D3C29B649F100FFB7A9 /* LoginViewCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoginViewCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -43,6 +45,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4155570F29C4A22C00D927C2 /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				4155571029C4A23E00D927C2 /* Alert.swift */,
+			);
+			path = Alert;
+			sourceTree = "<group>";
+		};
 		417370A129B9014F0089E20D /* Register */ = {
 			isa = PBXGroup;
 			children = (
@@ -87,6 +97,7 @@
 		41D78D3E29B649F100FFB7A9 /* LoginViewCode */ = {
 			isa = PBXGroup;
 			children = (
+				4155570F29C4A22C00D927C2 /* Alert */,
 				417370A129B9014F0089E20D /* Register */,
 				41D78D5329B64B2800FFB7A9 /* Login */,
 				41D78D3F29B649F100FFB7A9 /* AppDelegate.swift */,
@@ -205,6 +216,7 @@
 				41D78D5729B64B5800FFB7A9 /* LoginScreen.swift in Sources */,
 				41D78D4029B649F100FFB7A9 /* AppDelegate.swift in Sources */,
 				41D78D4229B649F100FFB7A9 /* SceneDelegate.swift in Sources */,
+				4155571129C4A23E00D927C2 /* Alert.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

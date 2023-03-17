@@ -12,6 +12,7 @@ class ViewController: UIViewController {
     
     var loginScreen:LoginScreen?
     var auth:Auth?
+    var alert:Alert?
     
     override func loadView() {
         self.loginScreen = LoginScreen()
@@ -23,25 +24,25 @@ class ViewController: UIViewController {
         self.loginScreen?.delegate(delegate: self)
         self.loginScreen?.configTextFieldDelegate(delegate: self)
         self.auth = Auth.auth()
+        self.alert = Alert(controller: self)
     }
 }
 
 
 extension ViewController:LoginScreenProtocol {
     func actionLoginButton() {
-        print("login")
         let email:String = self.loginScreen?.emailTextField.text ?? ""
         let password:String = self.loginScreen?.passwordTextField.text ?? ""
         
         self.auth?.signIn(withEmail: email, password: password, completion: {(user, error) in
             
             if error != nil {
-                print("Dados incorretos")
+                self.alert?.getAlert(title: "Atenção ", msg: "Dados incorretos")
             }else {
                 if user == nil {
-                    print("Erro inesperado ")
+                    self.alert?.getAlert(title: "Atenção ", msg: "Erro inesperado ")
                 }else {
-                    print("Logado com sucesso!!!")
+                    self.alert?.getAlert(title: "Parabéns", msg: "Logado com sucesso")
                 }
             }
         } )
@@ -49,7 +50,6 @@ extension ViewController:LoginScreenProtocol {
     }
     
     func actionRegisterButton() {
-        print("register button")
         let registerVC = RegisterViewController()
         self.navigationController?.pushViewController(registerVC, animated: true)
     }
